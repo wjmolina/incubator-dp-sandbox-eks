@@ -23,11 +23,10 @@ module "eks-module" {
 
   default_security_group_ingress = [
     {
-      from_port       = 30000
-      to_port         = 32767
-      protocol        = "tcp"
-      cidr_blocks     = "0.0.0.0/0"
-      security_groups = ["sg-08c6b9b05eb51b6db"]
+      from_port   = 30000
+      to_port     = 32767
+      protocol    = "tcp"
+      cidr_blocks = "0.0.0.0/0"
     }
   ]
 
