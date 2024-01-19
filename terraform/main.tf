@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "wmolina-tf"
+    bucket = "wmolina-terraform"
     key    = "wmolina-eks/terraform.tfstate"
   }
 }
