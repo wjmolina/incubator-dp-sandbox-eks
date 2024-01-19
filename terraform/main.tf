@@ -27,7 +27,7 @@ module "eks-module" {
       to_port         = 32767
       protocol        = "tcp"
       cidr_blocks     = "0.0.0.0/0"
-      security_groups = [module.eks-module.node_security_group_arn]
+      security_groups = ["sg-08c6b9b05eb51b6db"]
     }
   ]
 
