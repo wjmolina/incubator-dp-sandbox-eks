@@ -9,7 +9,7 @@ on:
           - apply
           - destroy
 jobs:
-  job:
+  main:
     defaults:
       run:
         working-directory: terraform
