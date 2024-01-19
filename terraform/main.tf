@@ -1,3 +1,10 @@
+terraform {
+  backend "s3" {
+    bucket = "wmolina-tf"
+    key    = "wmolina-eks/terraform.tfstate"
+  }
+}
+
 module "eks-module" {
   source = "git::https://github.com/wjmolina/eks-module.git?ref=8d6bb9b"
 
