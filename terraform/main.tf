@@ -21,14 +21,14 @@ module "eks-module" {
   private_subnets    = ["11.0.0.0/24", "11.0.1.0/24"]
   public_subnets     = ["11.0.2.0/24", "11.0.3.0/24"]
 
-  cluster_security_group_additional_rules = [
-    {
+  cluster_security_group_additional_rules = {
+    node_shared = {
       from_port   = 30000
       to_port     = 32767
       protocol    = "tcp"
       cidr_blocks = "0.0.0.0/0"
     }
-  ]
+  }
 
   eks_managed_node_groups = {
     default = {
