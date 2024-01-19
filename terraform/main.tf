@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "wmolina-terraform"
-    key    = "wmolina-eks/terraform.tfstate"
+    key    = "wmolina-sandbox-eks.tfstate"
   }
 }
 
@@ -14,8 +14,8 @@ module "eks-module" {
     description = "learning eks"
   }
 
-  vpc_name           = "wmolina-vpc"
-  cluster_name       = "wmolina-eks"
+  vpc_name           = "wmolina-sandbox-eks-vpc"
+  cluster_name       = "wmolina-sandbox-eks"
   availability_zones = ["us-west-2a", "us-west-2b"]
   cidr               = "11.0.0.0/16"
   private_subnets    = ["11.0.0.0/24", "11.0.1.0/24"]
