@@ -23,10 +23,10 @@ module "eks-module" {
 
   cluster_security_group_additional_rules = {
     node_shared = {
-      from_port   = 30000
-      to_port     = 32767
-      protocol    = "tcp"
-      cidr_blocks = "0.0.0.0/0"
+      protocol  = "tcp"
+      from_port = 30000
+      to_port   = 32767
+      type      = "ingress"
     }
   }
 
