@@ -6,7 +6,7 @@ terraform {
 }
 
 module "eks-module" {
-  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=2ded3e5"
+  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=2e92eee"
 
   default_tags = {
     user        = "wmolina"
@@ -21,13 +21,12 @@ module "eks-module" {
   private_subnets    = ["11.0.0.0/24", "11.0.1.0/24"]
   public_subnets     = ["11.0.2.0/24", "11.0.3.0/24"]
 
-  default_security_group_ingress = [
+  cluster_security_group_additional_rules = [
     {
-      from_port       = 30000
-      to_port         = 32767
-      protocol        = "tcp"
-      cidr_blocks     = "0.0.0.0/0"
-      security_groups = module.eks-module.node_security_group_id
+      from_port   = 30000
+      to_port     = 32767
+      protocol    = "tcp"
+      cidr_blocks = "0.0.0.0/0"
     }
   ]
 
