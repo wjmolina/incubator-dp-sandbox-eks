@@ -6,7 +6,7 @@ terraform {
 }
 
 module "eks-module" {
-  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=2e92eee"
+  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=1ddf05f"
 
   default_tags = {
     user        = "wmolina"
@@ -26,7 +26,7 @@ module "eks-module" {
       protocol  = "tcp"
       from_port = 30000
       to_port   = 32767
-      type      = ["ingress"]
+      type      = "ingress"
     }
   }
 
