@@ -23,4 +23,4 @@ jobs:
           aws-region: us-west-2
       - uses: hashicorp/setup-terraform@v3
       - run: terraform init
-      - run: terraform ${{ github.event.inputs.choice }}" -auto-approve
+      - run: terraform ${{ github.event.inputs.choice }} -auto-approve
