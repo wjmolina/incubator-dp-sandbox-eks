@@ -6,7 +6,7 @@ terraform {
 }
 
 module "eks-module" {
-  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=94516e6"
+  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=d1795d0"
 
   default_tags = {
     user        = "wmolina"
@@ -27,7 +27,7 @@ module "eks-module" {
       to_port         = 32767
       protocol        = "tcp"
       cidr_blocks     = "0.0.0.0/0"
-      security_groups = [module.eks-module.node_security_group_id]
+      security_groups = [module.eks-module.node_security_group_arn]
     }
   ]
 
