@@ -6,7 +6,7 @@ terraform {
 }
 
 module "eks-module" {
-  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=a6c89d1"
+  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=e06f122"
 
   default_tags = {
     user        = "wmolina"
