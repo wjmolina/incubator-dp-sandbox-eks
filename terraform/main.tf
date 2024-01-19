@@ -27,7 +27,7 @@ module "eks-module" {
       protocol    = "tcp"
       from_port   = 30000
       to_port     = 32767
-      cidr_blocks = "0.0.0.0/0"
+      cidr_blocks = ["0.0.0.0/0"]
     }
   }
 
