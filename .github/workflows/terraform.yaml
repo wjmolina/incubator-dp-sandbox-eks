@@ -1,4 +1,4 @@
-name: terraform-${{ github.event.inputs.choice }}
+name: terraform
 on:
   workflow_dispatch:
     inputs:
