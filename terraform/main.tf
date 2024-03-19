@@ -38,5 +38,11 @@ module "eks-module" {
       desired_size   = 1
       instance_types = ["t2.small"]
     }
+    airflow = {
+      min_size       = 1
+      max_size       = 1
+      desired_size   = 1
+      instance_types = ["t2.large"]
+    }
   }
 }
