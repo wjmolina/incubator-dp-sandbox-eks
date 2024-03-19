@@ -6,7 +6,7 @@ terraform {
 }
 
 module "eks-module" {
-  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=914ef0e"
+  source = "git::https://github.com/wjmolina/terraform-eks.git?ref=ca81402"
 
   default_tags = {
     user        = "wmolina"
@@ -43,6 +43,14 @@ module "eks-module" {
       max_size       = 1
       desired_size   = 1
       instance_types = ["t2.large"]
+
+      iam_role_additional_policies = {
+        AmazonEBSCSIDriverPolicy = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      }
     }
+  }
+
+  cluster_addons = {
+    aws-ebs-csi-driver = { most_recent = true }
   }
 }
